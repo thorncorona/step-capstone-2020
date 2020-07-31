@@ -1,0 +1,8 @@
+steps:
+  - name: maven:3-jdk-8
+    entrypoint: mvn
+    args: ["package", "test"]
+  - name: maven:3-jdk-8
+    entrypoint: mvn
+    args: ["package", "-Dmaven.test.skip=true"]
+images: ["gcr.io/cloud-builders/gcloud"]
