@@ -1,8 +1,11 @@
 steps:
-  - name: maven:3-jdk-8
+  - name: Copy GeoLite2 DB
+    entrypoint: gsutil
+    args: ["cp", "gs://erik-jevin-melba-step-2020/GeoLite2-City.mmdb resources/Geolite2-City.mmdb"]
+  - name: Test
     entrypoint: mvn
     args: ["package", "test"]
-  - name: maven:3-jdk-8
+  - name: Package
     entrypoint: mvn
     args: ["package", "-Dmaven.test.skip=true"]
 images: ["gcr.io/cloud-builders/gcloud"]

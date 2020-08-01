@@ -76,5 +76,6 @@
         <directory>resources</directory>
       </resource>
     </resources>
+  <testSourceDirectory>src/main/tests</testSourceDirectory>
   </build>
 </project>
