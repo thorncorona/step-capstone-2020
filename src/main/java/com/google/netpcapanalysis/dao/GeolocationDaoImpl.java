@@ -20,7 +20,7 @@ public class GeolocationDaoImpl implements GeolocationDao {
     try {
       if (GeolocationDaoImpl.class == null) throw new Error("class null");
       if (GeolocationDaoImpl.class.getClassLoader() == null) throw new Error("no class loader");
-      if (GeolocationDaoImpl.class.getClassLoader().getResource(GEO_DB_LOCATION) == null) throw new Error("resource null");
+      if (GeolocationDaoImpl.class.getClassLoader().getResource("resources/" + GEO_DB_LOCATION) == null) throw new Error("resource null");
       URL geoDBUrl = GeolocationDaoImpl.class.getClassLoader().getResource("resources/" + GEO_DB_LOCATION);
       database = new File(geoDBUrl.toURI());
       reader = new DatabaseReader.Builder(database).build();
