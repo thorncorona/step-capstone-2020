@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
+import java.util.*;
 
 public class GeolocationDaoImpl implements GeolocationDao {
 
@@ -19,7 +20,7 @@ public class GeolocationDaoImpl implements GeolocationDao {
     try {
       URL geoDBUrl = GeolocationDaoImpl.class.getClassLoader().getResource(GEO_DB_LOCATION);
       database = new File(geoDBUrl.toURI());
-      System.out.println(geoDBUrl.toURI());
+      throw new Error(geoDBUrl.toURI());
       reader = new DatabaseReader.Builder(database).build();
     } catch (Exception e) {
       e.printStackTrace();
