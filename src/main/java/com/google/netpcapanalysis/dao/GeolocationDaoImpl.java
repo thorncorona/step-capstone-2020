@@ -20,7 +20,7 @@ public class GeolocationDaoImpl implements GeolocationDao {
     try {
       URL geoDBUrl = GeolocationDaoImpl.class.getClassLoader().getResource(GEO_DB_LOCATION);
       database = new File(geoDBUrl.toURI());
-      throw new Error(geoDBUrl.toURI());
+      throw new Error(geoDBUrl.toURI().toString());
       reader = new DatabaseReader.Builder(database).build();
     } catch (Exception e) {
       e.printStackTrace();
